@@ -6,6 +6,5 @@ services:
     container_name: api
     env_file:
       - .env
-volumes:
-  app:
-    name: postgres-volume
+    ports:
+      - '3000:3000'
