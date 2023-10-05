@@ -44,7 +44,8 @@ export class ChiTieuUpdate {
 
   @Command('ct')
   async onChitieu(ctx): Promise<string> {
-    if (this.chitieuService.validator(ctx.payload)) {
+    const commamd = this.chitieuService.transform(ctx.payload);
+    if (this.chitieuService.validator(commamd)) {
       await this.httpHandlerService.post(process.env.APP_SCRIPT_API, {
         type: 'CHITIEU',
         params: ctx.payload,
