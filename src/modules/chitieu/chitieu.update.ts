@@ -42,7 +42,7 @@ export class ChiTieuUpdate {
     return 'Welcome judge';
   }
 
-  @Command('chitieu')
+  @Command('ct')
   async onChitieu(ctx): Promise<string> {
     if (this.chitieuService.validator(ctx.payload)) {
       await this.httpHandlerService.post(process.env.APP_SCRIPT_API, {
@@ -50,7 +50,7 @@ export class ChiTieuUpdate {
         params: ctx.payload,
       });
     } else {
-      return 'Sai format rồi ní, phải là /chitieu abc,giá tiền';
+      return 'Sai format rồi ní, phải là /ct abc,giá tiền';
     }
     return 'Đã thêm chi tiêu thành công';
   }
