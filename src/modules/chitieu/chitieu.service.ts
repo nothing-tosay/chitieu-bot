@@ -9,8 +9,8 @@ export class ChitieuService {
   validator(input: string) {
     const rs = input.split(',');
     if (rs.length !== 2) return false;
-    rs[1].replaceAll('k', '000');
-    if (isNaN(+rs[1])) return false;
+    const money = rs[1].replaceAll('k', '000');
+    if (isNaN(+money[1])) return false;
     return true;
   }
 
