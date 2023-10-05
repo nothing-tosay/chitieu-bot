@@ -48,7 +48,7 @@ export class ChiTieuUpdate {
     if (this.chitieuService.validator(commamd)) {
       await this.httpHandlerService.post(process.env.APP_SCRIPT_API, {
         type: 'CHITIEU',
-        params: ctx.payload,
+        params: commamd,
       });
     } else {
       return 'Sai format rồi ní, phải là /ct abc,giá tiền';
